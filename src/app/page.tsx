@@ -1,5 +1,10 @@
+import { Suspense } from "react";
 import ProfileCard from "@/components/Card/ProfileCard";
 import { LinkButton } from "@/components/Button/Button";
+import Spotify from "@/components/Card/Spotify/Spotify";
+import SpotifySkeletonCard from "@/components/Card/Spotify/SpotifySkeletonCard";
+
+export const dynamic = "force-dynamic";
 
 export default function Home() {
   return (
@@ -9,6 +14,11 @@ export default function Home() {
         <LinkButton href="/work" title="My Work" />
         <LinkButton href="/stack" title="Stack" />
       </div>
+      <Suspense fallback={<SpotifySkeletonCard />}>
+        <div className="flex my-10 justify-center">
+          <Spotify />
+        </div>
+      </Suspense>
     </>
   );
 }
