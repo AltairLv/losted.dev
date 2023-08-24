@@ -42,3 +42,9 @@ export interface IMetric {
   albumImageUrl: string;
   songUrl: string;
 }
+
+export interface IMessage {
+  content: string;
+  createdAt: Date;
+  name: string | null;
+}

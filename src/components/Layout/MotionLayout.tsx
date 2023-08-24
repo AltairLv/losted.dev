@@ -2,7 +2,7 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-export default function LayoutAnimation({
+export default function MotionLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -13,6 +13,7 @@ export default function LayoutAnimation({
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", duration: 0.25 }}
+        className="flex flex-col"
       >
         {children}
       </motion.div>

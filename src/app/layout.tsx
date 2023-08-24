@@ -1,15 +1,16 @@
 import "./globals.css";
+import localFont from "next/font/local";
 import React from "react";
 import clsx from "clsx";
-import { Space_Mono } from "next/font/google";
 import { Metadata } from "next";
 import { Navbar } from "@/components/Navbar/Navbar";
-import LayoutAnimation from "@/components/LayoutAnimation";
 import { SmoothScroll } from "@/lib/SmoothScroll";
+import MotionLayout from "@/components/Layout/MotionLayout";
 
-const SpaceMono = Space_Mono({
-  subsets: ["latin"],
+const SpaceMono = localFont({
+  src: "../../public/fonts/space-mono-regular.ttf",
   weight: "400",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -51,7 +52,7 @@ export default function RootLayout({
       <body className="antialiased max-w-3xl mb-16 md:mb-24 flex mt-2 md:mt-20 lg:mt-30 mx-auto">
         <main className="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col px-2 md:px-0 mx-2 md:mx-0">
           <Navbar />
-          <LayoutAnimation>{children}</LayoutAnimation>
+          <MotionLayout>{children}</MotionLayout>
           <SmoothScroll />
         </main>
       </body>

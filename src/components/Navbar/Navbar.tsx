@@ -28,6 +28,7 @@ export const NavbarLogo = () => {
 const navObj: { [key: string]: string } = {
   "/stack": "stack",
   "/work": "work",
+  "/guestbook": "guestbook",
 };
 
 export const Navbar = () => {
