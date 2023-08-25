@@ -10,11 +10,13 @@ export const devopslabData = {
 };
 
 export const linkinbioData = {
-  id: "linkinbio",
-  title: "Link in bio",
-  description: "Set all your links in a single one page.",
+  id: "links",
+  title: "Links",
+  description:
+    "Putting everything you create and share in one beautifully designed link.",
+  source: "https://github.com/AltairLv/links",
   visitUrl: "https://link.losted.dev",
-  previewImg: "link-in-bio.jpg",
+  previewImg: "links.jpg",
   stacks: ["Next.js", "TypeScript", "Tailwind CSS", "Framer-motion", "Vercel"],
 };
 

@@ -3,7 +3,7 @@ import { allWork } from "@/data/work";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import WorkItemCard from "@/components/Card/WorkItemCard";
-import { ArrowUpRightIcon } from "@/components/Icons";
+import { ArrowUpRightIcon, GitHubIcon } from "@/components/Icons";
 import { WorkInterface } from "@/types/types";
 
 function getWork(slug: string): WorkInterface | undefined {
@@ -79,6 +79,20 @@ export default function Work({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </div>
+      {project.source && (
+        <div className="flex mx-auto">
+          <a
+            href={project.source}
+            rel="noopener noreferrer"
+            target="_blank"
+            className="inline-flex items-center space-x-2 px-3 py-1.5 hover:text-neutral-700 dark:hover:text-neutral-200 border dark:border-BorderLight border-BorderDark rounded-lg"
+          >
+            {" "}
+            <span>Source</span>
+            <GitHubIcon />
+          </a>
+        </div>
+      )}
     </>
   );
 }
