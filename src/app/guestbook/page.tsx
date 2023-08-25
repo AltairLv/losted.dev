@@ -16,7 +16,6 @@ export const metadata = {
 
 export default async function GuestbookPage() {
   const session = await getAuthSession();
-  console.log("Current Session : ", session?.user);
   return (
     <>
       <Provider>

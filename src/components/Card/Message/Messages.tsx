@@ -15,8 +15,6 @@ const getGuestbook = async (): Promise<IMessage[]> => {
       createdAt: true,
     },
   });
-  // Throttling the request for Suspense.
-  // await new Promise((data) => setTimeout(data, 5000));
 
   return data;
 };
