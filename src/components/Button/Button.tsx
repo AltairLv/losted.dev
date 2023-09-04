@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { RightArrowIcon } from "@/components/Icons";
-import { LinkButtonInterface } from "@/types/types";
+import { ILinkButton } from "@/types/types";
 
-export const LinkButton = ({ href, title }: LinkButtonInterface) => {
+export const LinkButton = ({ href, title }: ILinkButton) => {
   return (
     <Link
       href={href}

@@ -1,6 +1,6 @@
 import React from "react";
 
-export interface WorkInterface {
+export interface IWork {
   id: string;
   title: string;
   description: string;
@@ -10,19 +10,19 @@ export interface WorkInterface {
   stacks: string[];
 }
 
-export interface StackInterface {
+export interface IStack {
   title: string;
   icon: React.FC;
   favorite?: boolean;
   description: string;
 }
 
-export interface LinkButtonInterface {
+export interface ILinkButton {
   href: string;
   title: string;
 }
 
-export interface WorkItemInterface {
+export interface IWorkItem {
   link?: string;
   title?: string;
   thumbnail: string;

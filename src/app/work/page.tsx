@@ -1,7 +1,7 @@
 import { workSum } from "@/data/info";
 import { allWork } from "@/data/work";
 import WorkItemCard from "@/components/Card/WorkItemCard";
-import { WorkInterface } from "@/types/types";
+import { IWork } from "@/types/types";
 
 export const metadata = {
   title: "Work",
@@ -13,7 +13,7 @@ export default function WorkPage() {
     <>
       <p className="mb-4 mt-5 text-center">{workSum()}</p>
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:justify-items-center my-6">
-        {allWork.map((project: WorkInterface, index) => {
+        {allWork.map((project: IWork, index) => {
           return (
             <WorkItemCard
               key={index}

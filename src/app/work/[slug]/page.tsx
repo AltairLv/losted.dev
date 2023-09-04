@@ -4,11 +4,11 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import WorkItemCard from "@/components/Card/WorkItemCard";
 import { ArrowUpRightIcon, GitHubIcon } from "@/components/Icons";
-import { WorkInterface } from "@/types/types";
+import { IWork } from "@/types/types";
 
-function getWork(slug: string): WorkInterface | undefined {
+function getWork(slug: string): IWork | undefined {
   const projectId = slug;
-  return allWork.find((project: WorkInterface) => project.id == projectId);
+  return allWork.find((project: IWork) => project.id == projectId);
 }
 
 export function generateStaticParams(): { slug: string }[] {

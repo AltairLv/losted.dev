@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { WorkItemInterface } from "@/types/types";
+import { IWorkItem } from "@/types/types";
 
-const WorkItemCard = ({ link, title, thumbnail }: WorkItemInterface) => {
+const WorkItemCard = ({ link, title, thumbnail }: IWorkItem) => {
   const previewImg = `/assets/work/${thumbnail}`;
 
   return (

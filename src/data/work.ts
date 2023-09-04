@@ -1,4 +1,4 @@
-import { WorkInterface } from "@/types/types";
+import { IWork } from "@/types/types";
 
 export const devopslabData = {
   id: "devopslab",
@@ -36,8 +36,4 @@ export const markdownData = {
   ],
 };
 
-export const allWork: WorkInterface[] = [
-  devopslabData,
-  markdownData,
-  linkinbioData,
-];
+export const allWork: IWork[] = [devopslabData, markdownData, linkinbioData];

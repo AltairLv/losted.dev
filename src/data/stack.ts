@@ -6,7 +6,7 @@ import {
   TailwindIcon,
   TypescriptIcon,
 } from "@/components/Icons";
-import { StackInterface } from "@/types/types";
+import { IStack } from "@/types/types";
 
 const reactjs = {
   title: "React.js",
@@ -46,7 +46,7 @@ const postgre = {
   icon: PostgreIcon,
   description: "An open-source relational database system.",
 };
-export const allStack: StackInterface[] = [
+export const allStack: IStack[] = [
   reactjs,
   nextjs,
   tailwind,
