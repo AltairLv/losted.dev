@@ -4,10 +4,10 @@ export const avatar = "https://avatars.githubusercontent.com/u/142126691?v=4";
 export const bio = () => {
   return (
     <>
-      He is a software developer. He would like to learn more and improve his
-      software engineering skills. He is currently busy with his studies, but he
-      would like to have more time for coding.
-      <br />~ Last info: His journey began in 2022. 🌿
+      From language student to a software developer, he would like to learn more
+      and improve his software engineering skills. He enjoys sharing his code &
+      creating projects.
+      <br />~ Last info: His journey began in 2021. 🌿
     </>
   );
 };
