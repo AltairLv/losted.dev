@@ -19,11 +19,12 @@
     "date-fns": "^2.30.0",
     "framer-motion": "^10.15.2",
     "js-confetti": "^0.11.0",
-    "next": "^13.4.19",
+    "next": "^13.5.2",
     "next-auth": "^4.22.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "server-only": "^0.0.1",
+    "sharp": "^0.32.6",
     "zod": "^3.22.1"
   },
   "devDependencies": {
