@@ -1,4 +1,5 @@
 import {
+  NestIcon,
   NextIcon,
   PostgreIcon,
   PrismaIcon,
@@ -19,6 +20,12 @@ const nextjs = {
   icon: NextIcon,
   favorite: true,
   description: "A React.js framework.",
+};
+
+const nestjs = {
+  title: "NestJS",
+  icon: NestIcon,
+  description: "A progressive server-side framework.",
 };
 
 const tailwind = {
@@ -47,10 +54,11 @@ const postgre = {
   description: "An open-source relational database system.",
 };
 export const allStack: IStack[] = [
-  reactjs,
   nextjs,
-  tailwind,
-  typescript,
+  reactjs,
+  nestjs,
   prisma,
   postgre,
+  tailwind,
+  typescript,
 ];
