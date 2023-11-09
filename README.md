@@ -3,7 +3,7 @@
 My little portfolio.
 ## ✨ Getting Started
 
-Requires Node.js 16.14+ version.
+Requires Node.js 18.17+ version.
 
 ```bash
   git clone https://github.com/altairlv/losted.dev.git
@@ -16,4 +16,3 @@ Requires Node.js 16.14+ version.
 [MIT](LICENSE)
 
 Please be kind and remove all of my personal information when cloning/forking this project.
-
