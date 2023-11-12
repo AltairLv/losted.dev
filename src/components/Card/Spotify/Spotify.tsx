@@ -14,17 +14,11 @@ async function getSpotify() {
 
 export default async function Spotify() {
   const data = await getSpotify();
+  if (!data) return null;
+
   return (
-    <>
-      {data ? (
-        <>
-          <SpotifyClientCard playedAt={data.playedAt}>
-            <SpotifyServerCard spotify={data} />
-          </SpotifyClientCard>
-        </>
-      ) : (
-        <></>
-      )}
-    </>
+    <SpotifyClientCard playedAt={data.playedAt}>
+      <SpotifyServerCard spotify={data} />
+    </SpotifyClientCard>
   );
 }

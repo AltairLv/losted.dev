@@ -4,8 +4,10 @@ import {
 } from "@/lib/spotify/spotify";
 import { IMetric } from "@/types/types";
 
-export const getPlaying = async (): Promise<IMetric | null> => {
-  const currentMusic = await currentlyPlayingSong();
+export const getPlaying = async (
+  access_token: string
+): Promise<IMetric | null> => {
+  const currentMusic = await currentlyPlayingSong(access_token);
 
   if (currentMusic === null) {
     return null;
@@ -32,8 +34,10 @@ export const getPlaying = async (): Promise<IMetric | null> => {
   };
 };
 
-export const getRecent = async (): Promise<IMetric | null> => {
-  const recentMusic = await recentlyPlayedSong();
+export const getRecent = async (
+  access_token: string
+): Promise<IMetric | null> => {
+  const recentMusic = await recentlyPlayedSong(access_token);
 
   const track = recentMusic.items[0].track;
 

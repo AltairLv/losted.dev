@@ -30,8 +30,7 @@ export const getAccessToken = async () => {
   return accessTokenSchema.parse(responseJson);
 };
 
-export const currentlyPlayingSong = cache(async () => {
-  const { access_token } = await getAccessToken();
+export const currentlyPlayingSong = cache(async (access_token: string) => {
   const response = await fetch(
     "https://api.spotify.com/v1/me/player/currently-playing",
     {
@@ -48,8 +47,7 @@ export const currentlyPlayingSong = cache(async () => {
   return playingSpotifySchema.parse(responseJson);
 });
 
-export const recentlyPlayedSong = cache(async () => {
-  const { access_token } = await getAccessToken();
+export const recentlyPlayedSong = cache(async (access_token: string) => {
   const date = Math.floor(Date.now());
 
   const response = await fetch(
