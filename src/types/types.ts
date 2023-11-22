@@ -4,7 +4,7 @@ export interface IWork {
   id: string;
   title: string;
   description: string;
-  visitUrl: string;
+  visitUrl?: string;
   source?: string;
   previewImg: string;
   stacks: string[];

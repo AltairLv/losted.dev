@@ -24,7 +24,6 @@ export const markdownData = {
   id: "markdown",
   title: "NoteSea",
   description: "Little markdown application which allows to take notes.",
-  visitUrl: "https://notesea.me",
   previewImg: "markdown.jpg",
   stacks: [
     "Next.js",

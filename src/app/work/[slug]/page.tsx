@@ -59,14 +59,16 @@ export default function Work({ params }: { params: { slug: string } }) {
             <h1 className="font-sans text-2xl underline underline-offset-4">
               {project.title}
             </h1>
-            <a
-              href={project.visitUrl}
-              rel="noopener noreferrer"
-              target="_blank"
-              className="inline-flex font-sans font-bold px-3 py-1 items-center border border-BorderDark dark:border-BorderLight rounded-lg gap-2 hover:border-indigo-400 hover:text-neutral-700 dark:hover:text-neutral-200 duration-100"
-            >
-              VISIT <ArrowUpRightIcon />
-            </a>
+            {project.visitUrl && (
+              <a
+                href={project.visitUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+                className="inline-flex font-sans font-bold px-3 py-1 items-center border border-BorderDark dark:border-BorderLight rounded-lg gap-2 hover:border-indigo-400 hover:text-neutral-700 dark:hover:text-neutral-200 duration-100"
+              >
+                VISIT <ArrowUpRightIcon />
+              </a>
+            )}
           </div>
           <p className="mb-2 text-base font-sans">{project.description}</p>
           <h2 className="text-xl font-sans">Stack 🛠️</h2>

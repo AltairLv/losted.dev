@@ -4,6 +4,7 @@ import { LinkButton } from "@/components/Button/Button";
 import Spotify from "@/components/Card/Spotify/Spotify";
 import SpotifySkeletonCard from "@/components/Card/Spotify/SpotifySkeletonCard";
 import Link from "next/link";
+import { Globe } from "@/components/Globe";
 
 export const dynamic = "force-dynamic";
 
@@ -16,6 +17,7 @@ export default function Home() {
         <LinkButton href="/work" title="My Work" />
         <LinkButton href="/stack" title="Stack" />
       </div>
+      <Globe />
       <Link
         href="/guestbook"
         className="mt-5 mx-auto text-xs text-neutral-600 dark:text-neutral-200 hover:text-neutral-500 dark:hover:text-neutral-300"
