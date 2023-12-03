@@ -40,7 +40,7 @@ export const Globe = () => {
       mapSamples: 16000,
       mapBrightness: 2,
       baseColor: [1, 1, 1],
-      markerColor: [190 / 255, 48 / 255, 68 / 255],
+      markerColor: [108 / 255, 255 / 255, 255 / 255],
       glowColor: [0.8, 0.8, 0.8],
       markers: [{ location: [48.866667, 2.333333], size: 0.06 }],
       scale: 2.4,
