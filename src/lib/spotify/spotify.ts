@@ -4,6 +4,7 @@ import {
   accessTokenSchema,
   playingSpotifySchema,
   recentSpotifySchema,
+  topArtistsSchema,
 } from "@/lib/zod/schema";
 
 const client_id = process.env.SPOTIFY_CLIENT_ID;
@@ -61,4 +62,18 @@ export const recentlyPlayedSong = cache(async (access_token: string) => {
   );
   const responseJson = await response.json();
   return recentSpotifySchema.parse(responseJson);
+});
+
+export const topArtists = cache(async (access_token: string) => {
+  const response = await fetch(
+    "https://api.spotify.com/v1/me/top/artists?limit=4&offset=0",
+    {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+      cache: "no-cache",
+    }
+  );
+  const responseJson = await response.json();
+  return topArtistsSchema.parse(responseJson);
 });

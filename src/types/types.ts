@@ -28,12 +28,18 @@ export interface IWorkItem {
   thumbnail: string;
 }
 
+export interface IMessage {
+  content: string;
+  createdAt: Date;
+  name: string | null;
+}
+
 export interface ISpotifyClientCard {
   playedAt: Date | null;
   children: React.ReactNode;
 }
 
-export interface IMetric {
+export interface ISpotifyPlay {
   isPlaying: boolean;
   playedAt: null | Date;
   title: string;
@@ -43,8 +49,8 @@ export interface IMetric {
   songUrl: string;
 }
 
-export interface IMessage {
-  content: string;
-  createdAt: Date;
-  name: string | null;
+export interface ISpotifyArtist {
+  name: string;
+  url: string;
+  coverImg: string;
 }

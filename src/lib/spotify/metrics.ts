@@ -1,12 +1,13 @@
 import {
   currentlyPlayingSong,
   recentlyPlayedSong,
+  topArtists,
 } from "@/lib/spotify/spotify";
-import { IMetric } from "@/types/types";
+import { ISpotifyArtist, ISpotifyPlay } from "@/types/types";
 
 export const getPlaying = async (
   access_token: string
-): Promise<IMetric | null> => {
+): Promise<ISpotifyPlay | null> => {
   const currentMusic = await currentlyPlayingSong(access_token);
 
   if (currentMusic === null) {
@@ -36,7 +37,7 @@ export const getPlaying = async (
 
 export const getRecent = async (
   access_token: string
-): Promise<IMetric | null> => {
+): Promise<ISpotifyPlay | null> => {
   const recentMusic = await recentlyPlayedSong(access_token);
 
   const track = recentMusic.items[0].track;
@@ -61,4 +62,16 @@ export const getRecent = async (
     albumImageUrl,
     songUrl,
   };
+};
+
+export const getTopArtists = async (
+  access_token: string
+): Promise<ISpotifyArtist[]> => {
+  const theArtists = await topArtists(access_token);
+
+  return theArtists.items.map((artist) => ({
+    name: artist.name,
+    url: artist.external_urls.spotify,
+    coverImg: artist.images[1].url,
+  }));
 };

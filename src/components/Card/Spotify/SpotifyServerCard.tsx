@@ -1,9 +1,9 @@
 import Image from "next/image";
 import clsx from "clsx";
 import { MusicIcon } from "@/components/Icons";
-import { IMetric } from "@/types/types";
+import { ISpotifyPlay } from "@/types/types";
 
-const SpotifyServerCard = ({ spotify }: { spotify: IMetric }) => {
+const SpotifyServerCard = ({ spotify }: { spotify: ISpotifyPlay }) => {
   return (
     <div className="font-sans flex flex-row min-w-[250px] py-1 border-[1px] dark:border-BorderLight border-BorderDark rounded-md justify-between items-center space-x-3 px-2 z-10">
       <a

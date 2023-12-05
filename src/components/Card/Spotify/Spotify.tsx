@@ -4,7 +4,7 @@ import { fetchSpotifySchema } from "@/lib/zod/schema";
 
 async function getSpotify() {
   try {
-    const response = await fetch("https://losted.dev/api/spotify");
+    const response = await fetch("https://losted.dev/api/spotify/playing");
     const responseJson = await response.json();
     return fetchSpotifySchema.parse(responseJson);
   } catch (err) {

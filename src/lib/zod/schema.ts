@@ -49,3 +49,19 @@ export const fetchSpotifySchema = z
     songUrl: z.string(),
   })
   .nullable();
+
+export const topArtistsSchema = z.object({
+  items: z.array(
+    z.object({
+      external_urls: z.object({
+        spotify: z.string(),
+      }),
+      images: z.array(
+        z.object({
+          url: z.string(),
+        })
+      ),
+      name: z.string(),
+    })
+  ),
+});
