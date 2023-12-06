@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { ISpotifyArtist } from "@/types/types";
+import { getAccessToken } from "@/lib/spotify/spotify";
+import { getTopArtists } from "@/lib/spotify/metrics";
 
 async function getData() {
   try {
-    const response = await fetch("https://losted.dev/api/spotify/tracks", {
-      next: { revalidate: 3600 * 24 },
-    });
-    return await response.json();
+    const { access_token } = await getAccessToken();
+    return await getTopArtists(access_token);
   } catch (err) {
     return null;
   }
@@ -19,7 +19,7 @@ export default async function SpotifyPage() {
       <p className="mb-4 mt-5 text-center">Looks like you are curious 👀</p>
       <h2 className="text-xl mt-5">· Top Artists:</h2>
       <div className="grid md:grid-cols-2 grid-cols-1 max-w-lg gap-x-12 gap-y-5 p-5 md:p-8 mx-auto place-items-center">
-        {data.map((artist: ISpotifyArtist, index: number) => {
+        {data?.map((artist: ISpotifyArtist, index: number) => {
           return (
             <a
               key={index}
