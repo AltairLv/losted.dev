@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { ISpotifyArtist } from "@/types/types";
-import { getAccessToken } from "@/lib/spotify/spotify";
-import { getTopArtists } from "@/lib/spotify/metrics";
 
 async function getData() {
   try {
-    const { access_token } = await getAccessToken();
-    return await getTopArtists(access_token);
+    const response = await fetch("https://losted.dev/api/spotify/artists", {
+      next: { revalidate: 3600 * 24 },
+    });
+    return await response.json();
   } catch (err) {
     return null;
   }
@@ -36,9 +36,8 @@ export default async function SpotifyPage() {
                   src={artist.coverImg}
                   alt={artist.name}
                   blurDataURL={artist.coverImg}
+                  fill={true}
                   className="group-hover:scale-105 ease-in-out duration-300"
-                  layout="fill"
-                  objectFit="cover"
                   priority
                 />
               </div>
