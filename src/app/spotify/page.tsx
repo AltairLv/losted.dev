@@ -1,6 +1,11 @@
 import Image from "next/image";
 import { ISpotifyArtist } from "@/types/types";
 
+export const metadata = {
+  title: "Spotify",
+  description: "My Spotify stats, top artists and top tracks.",
+};
+
 async function getData() {
   try {
     const response = await fetch("https://losted.dev/api/spotify/artists", {
