@@ -18,9 +18,9 @@ export const NavbarLogo = () => {
 
   return (
     <motion.div initial="hidden" animate="visible" variants={container}>
-      {placeholderText.map((item, index) => {
-        return <AnimatedCharacters {...item} key={index} />;
-      })}
+      {placeholderText.map((item, index) => (
+        <AnimatedCharacters {...item} key={index} />
+      ))}
     </motion.div>
   );
 };

@@ -22,32 +22,30 @@ const AnimatedCharacters = (props: { text: string }) => {
 
   return (
     <>
-      {words.map((word: string[], index) => {
-        return (
-          <Wrapper key={index}>
-            {words[index].flat().map((element: string, index) => {
-              return (
-                <div
-                  key={index}
+      {words.map((word: string[], index) => (
+        <Wrapper key={index}>
+          {words[index].flat().map((element: string, index) => {
+            return (
+              <div
+                key={index}
+                style={{
+                  overflow: "hidden",
+                  display: "inline-block",
+                }}
+              >
+                <motion.span
                   style={{
-                    overflow: "hidden",
                     display: "inline-block",
                   }}
+                  variants={item}
                 >
-                  <motion.span
-                    style={{
-                      display: "inline-block",
-                    }}
-                    variants={item}
-                  >
-                    {element}
-                  </motion.span>
-                </div>
-              );
-            })}
-          </Wrapper>
-        );
-      })}
+                  {element}
+                </motion.span>
+              </div>
+            );
+          })}
+        </Wrapper>
+      ))}
     </>
   );
 };

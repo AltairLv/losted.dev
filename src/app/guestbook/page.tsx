@@ -1,17 +1,17 @@
-import { getAuthSession } from "@/lib/auth";
+import { getAuthSession } from "@/lib/auth/auth";
 import { SignIn, SignOut } from "@/components/Button/SignButton";
 import { Suspense } from "react";
 import { Messages } from "@/components/Card/Message/Messages";
 import { MessageSkeletonCard } from "@/components/Card/Message/MessageSkeletonCard";
 import { MessageForm } from "@/components/MessageForm";
-import Provider from "@/components/Auth/AuthProvider";
+import Provider from "@/components/Provider/AuthProvider";
 
 export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";
 
 export const metadata = {
   title: "Guestbook",
-  description: "Her you can leave your mark, be part of a little story.",
+  description: "Here you can leave your mark, be part of a little story.",
 };
 
 export default async function GuestbookPage() {

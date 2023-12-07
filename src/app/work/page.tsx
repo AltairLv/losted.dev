@@ -13,16 +13,14 @@ export default function WorkPage() {
     <>
       <p className="mb-4 mt-5 text-center">{workSum()}</p>
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:justify-items-center my-6">
-        {allWork.map((project: IWork, index) => {
-          return (
-            <WorkItemCard
-              key={index}
-              link={project.id}
-              title={project.title}
-              thumbnail={project.previewImg}
-            />
-          );
-        })}
+        {allWork.map((project: IWork, index) => (
+          <WorkItemCard
+            key={index}
+            link={project.id}
+            title={project.title}
+            thumbnail={project.previewImg}
+          />
+        ))}
       </div>
     </>
   );

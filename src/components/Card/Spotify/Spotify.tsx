@@ -1,12 +1,11 @@
 import SpotifyClientCard from "./SpotifyClientCard";
 import SpotifyServerCard from "./SpotifyServerCard";
-import { fetchSpotifySchema } from "@/lib/zod/schema";
+import { ISpotifyPlay } from "@/types/types";
 
-async function getSpotify() {
+async function getSpotify(): Promise<ISpotifyPlay | null> {
   try {
     const response = await fetch("https://losted.dev/api/spotify/playing");
-    const responseJson = await response.json();
-    return fetchSpotifySchema.parse(responseJson);
+    return await response.json();
   } catch (err) {
     return null;
   }

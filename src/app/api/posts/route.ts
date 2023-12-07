@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { db } from "@/lib/prisma";
-import { getAuthSession } from "@/lib/auth";
+import { db } from "@/lib/db/prisma";
+import { getAuthSession } from "@/lib/auth/auth";
 
 export async function POST(request: Request): Promise<Response> {
   const { message, username } = await request.json();

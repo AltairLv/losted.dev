@@ -1,4 +1,4 @@
-import { db } from "@/lib/prisma";
+import { db } from "@/lib/db/prisma";
 import { notFound } from "next/navigation";
 import { IMessage } from "@/types/types";
 import MessageCard from "@/components/Card/Message/MessageCard";
