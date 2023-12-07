@@ -3,7 +3,6 @@
 import React, { useEffect, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import generateEmoji from "@/lib/generateEmoji";
 import JSConfetti from "js-confetti";
 
 export const MessageForm = () => {
@@ -18,16 +17,7 @@ export const MessageForm = () => {
 
   useEffect(() => {
     setUsername(hasWhiteSpace(name));
-  }, [name]);
-
-  function hasWhiteSpace(s: string | undefined | null) {
-    if (s && s.indexOf(" ") >= 0) {
-      return s.substring(0, s.indexOf(" "));
-    } else if (s === null) {
-      return generateEmoji();
-    }
-    return s;
-  }
+  }, []);
 
   const handlePost = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -103,3 +93,10 @@ export const createPost = async (body: {
   });
   return response.json();
 };
+
+function hasWhiteSpace(s: string | undefined | null) {
+  if (s && s.indexOf(" ") >= 0) {
+    return s.substring(0, s.indexOf(" "));
+  }
+  return s;
+}

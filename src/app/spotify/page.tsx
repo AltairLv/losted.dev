@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ISpotifyArtist } from "@/types/types";
 import SpotifyArtist from "@/components/Card/Spotify/SpotifyArtist";
 
