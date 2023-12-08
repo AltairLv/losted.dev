@@ -1,5 +1,7 @@
+import "server-only";
 import {
   currentlyPlayingSong,
+  getAccessToken,
   recentlyPlayedSong,
   topArtists,
 } from "@/lib/spotify/spotify";
@@ -64,9 +66,8 @@ export const getRecent = async (
   };
 };
 
-export const getTopArtists = async (
-  access_token: string
-): Promise<ISpotifyArtist[]> => {
+export const getTopArtists = async (): Promise<ISpotifyArtist[]> => {
+  const { access_token } = await getAccessToken();
   const theArtists = await topArtists(access_token);
 
   return theArtists.items.map((artist) => ({

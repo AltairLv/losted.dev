@@ -1,5 +1,4 @@
 import "server-only";
-import { cache } from "react";
 import {
   accessTokenSchema,
   playingSpotifySchema,
@@ -31,7 +30,7 @@ export const getAccessToken = async () => {
   return accessTokenSchema.parse(responseJson);
 };
 
-export const currentlyPlayingSong = cache(async (access_token: string) => {
+export const currentlyPlayingSong = async (access_token: string) => {
   const response = await fetch(
     "https://api.spotify.com/v1/me/player/currently-playing",
     {
@@ -46,9 +45,9 @@ export const currentlyPlayingSong = cache(async (access_token: string) => {
   }
   const responseJson = await response.json();
   return playingSpotifySchema.parse(responseJson);
-});
+};
 
-export const recentlyPlayedSong = cache(async (access_token: string) => {
+export const recentlyPlayedSong = async (access_token: string) => {
   const date = Math.floor(Date.now());
 
   const response = await fetch(
@@ -62,18 +61,18 @@ export const recentlyPlayedSong = cache(async (access_token: string) => {
   );
   const responseJson = await response.json();
   return recentSpotifySchema.parse(responseJson);
-});
+};
 
-export const topArtists = cache(async (access_token: string) => {
+export const topArtists = async (access_token: string) => {
   const response = await fetch(
     "https://api.spotify.com/v1/me/top/artists?limit=4&offset=0",
     {
       headers: {
         Authorization: `Bearer ${access_token}`,
       },
-      cache: "no-cache",
+      next: { revalidate: 60 * 60 * 24 },
     }
   );
   const responseJson = await response.json();
   return topArtistsSchema.parse(responseJson);
-});
+};

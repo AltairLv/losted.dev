@@ -1,24 +1,14 @@
 import { ISpotifyArtist } from "@/types/types";
 import SpotifyArtist from "@/components/Card/Spotify/SpotifyArtist";
+import { getTopArtists } from "@/lib/spotify/metrics";
 
 export const metadata = {
   title: "Spotify",
   description: "My Spotify stats, top artists and top tracks.",
 };
 
-async function getData() {
-  try {
-    const response = await fetch("https://losted.dev/api/spotify/artists", {
-      next: { revalidate: 3600 * 24 },
-    });
-    return await response.json();
-  } catch (err) {
-    return null;
-  }
-}
-
 export default async function SpotifyPage() {
-  const data = await getData();
+  const data = await getTopArtists();
   return (
     <>
       <p className="mb-4 mt-5 text-center">Looks like you are curious 👀</p>
