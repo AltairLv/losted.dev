@@ -4,6 +4,7 @@ import {
   playingSpotifySchema,
   recentSpotifySchema,
   topArtistsSchema,
+  topTracksSchema,
 } from "@/lib/zod/schema";
 
 const client_id = process.env.SPOTIFY_CLIENT_ID;
@@ -75,4 +76,18 @@ export const topArtists = async (access_token: string) => {
   );
   const responseJson = await response.json();
   return topArtistsSchema.parse(responseJson);
+};
+
+export const topTracks = async (access_token: string) => {
+  const response = await fetch(
+    "https://api.spotify.com/v1/me/top/tracks?limit=6&offset=0",
+    {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+      next: { revalidate: 60 * 60 * 24 },
+    }
+  );
+  const responseJson = await response.json();
+  return topTracksSchema.parse(responseJson);
 };

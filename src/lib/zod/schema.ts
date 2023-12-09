@@ -65,3 +65,22 @@ export const topArtistsSchema = z.object({
     })
   ),
 });
+
+export const topTracksSchema = z.object({
+  items: z.array(
+    z.object({
+      name: z.string(),
+      artists: z.array(
+        z.object({
+          name: z.string(),
+        })
+      ),
+      external_urls: z.object({
+        spotify: z.string(),
+      }),
+      album: z.object({
+        images: z.array(z.object({ url: z.string() })),
+      }),
+    })
+  ),
+});

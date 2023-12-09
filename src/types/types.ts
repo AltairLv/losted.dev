@@ -54,3 +54,15 @@ export interface ISpotifyArtist {
   url: string;
   coverImg: string;
 }
+
+export interface ISpotifyTrack {
+  name: string;
+  artists: string;
+  url: string;
+  coverImg: string;
+}
+
+export interface ISpotifyTop {
+  artists: ISpotifyArtist[];
+  tracks: ISpotifyTrack[];
+}
