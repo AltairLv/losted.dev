@@ -17,7 +17,7 @@ export const MessageForm = () => {
 
   useEffect(() => {
     setUsername(hasWhiteSpace(name));
-  }, []);
+  }, [name]);
 
   const handlePost = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
