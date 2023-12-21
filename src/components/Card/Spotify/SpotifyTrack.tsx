@@ -18,12 +18,12 @@ const SpotifyTrack = ({
       href={url}
       target="_blank"
       rel="noopener"
-      className="group relative flex flex-row items-start w-full px-6 py-3 border border-black/10 dark:border-white/10 rounded"
+      className="group relative flex flex-row items-start w-full px-7 py-2 border border-black/10 dark:border-white/10 rounded"
     >
       <div className="absolute top-1 left-1.5 text-xs dark:text-white/20 text-black/30">
         {index + 1}.
       </div>
-      <div className="relative flex-shrink-0 w-16 h-16 md:w-14 md:h-14 mt-2 border border-neutral-400 dark:border-neutral-800 rounded overflow-hidden">
+      <div className="relative flex-shrink-0 w-10 h-10 mt-2 mb-1 border border-neutral-400 dark:border-neutral-800 rounded overflow-hidden">
         <Image
           src={cover}
           alt={name}
@@ -33,11 +33,11 @@ const SpotifyTrack = ({
           priority
         />
       </div>
-      <div className="flex flex-col mt-2 ml-4">
+      <div className="flex flex-col mt-1.5 ml-4">
         <span className="text-base md:text-sm line-clamp-1">{name}</span>
-        <div className="block text-sm">
+        <div className="inline-flex text-xs dark:text-gray-300">
           <span className="font-sans">by </span>
-          <span className="">{artists}</span>
+          <span className="ml-1 line-clamp-1">{artists}</span>
         </div>
       </div>
     </a>
