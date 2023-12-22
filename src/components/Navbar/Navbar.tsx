@@ -29,6 +29,7 @@ const navObj: { [key: string]: string } = {
   "/stack": "stack",
   "/work": "work",
   "/guestbook": "guestbook",
+  "/spotify": "spotify",
 };
 
 export const Navbar = () => {
@@ -58,13 +59,9 @@ export const Navbar = () => {
               }}
               className="flex flex-row items-center"
             >
-              <Link
-                href={page}
-                as={`/${page}`}
-                className="font-sans mx-1 p-0.5 hover:text-neutral-700 dark:hover:text-neutral-200 "
-              >
+              <span className="font-sans mx-1 p-0.5 hover:text-neutral-700 dark:hover:text-neutral-200 ">
                 {page}
-              </Link>
+              </span>
               <span className="mx-2 md:mx-4 cursor-default">/</span>
             </motion.div>
           )}
