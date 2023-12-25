@@ -23,7 +23,7 @@ const SpotifyTrack = ({
       <div className="absolute top-1 left-1.5 text-xs dark:text-white/20 text-black/30">
         {index + 1}.
       </div>
-      <div className="relative flex-shrink-0 w-10 h-10 mt-2 mb-1 border border-neutral-400 dark:border-neutral-800 rounded overflow-hidden">
+      <div className="relative flex-shrink-0 w-10 h-10 md:w-12 md:h-12 mt-2 mb-1 border border-neutral-400 dark:border-neutral-800 rounded overflow-hidden">
         <Image
           src={cover}
           alt={name}
