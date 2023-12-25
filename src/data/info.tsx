@@ -7,7 +7,7 @@ export const bio = () => {
       From language student to a software developer, he would like to learn more
       and improve his software engineering skills. He enjoys sharing his code &
       creating projects.
-      <br />~ Last info: His journey began in 2021. 🌿
+      <br />~ Last info: His journey began in 2020. 🌿
     </>
   );
 };

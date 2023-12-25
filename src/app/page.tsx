@@ -16,6 +16,7 @@ export default function Home() {
       <div className="flex flex-col h-auto my-4 space-y-4 md:space-y-0 md:space-x-10 items-center md:flex-row justify-between md:justify-center">
         <LinkButton href="/work" title="My Work" />
         <LinkButton href="/stack" title="Stack" />
+        <LinkButton href="/spotify" title="Spotify" />
       </div>
       <Globe />
       <Link
