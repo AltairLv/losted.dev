@@ -10,6 +10,13 @@ export interface IWork {
   stacks: string[];
 }
 
+export interface IProject {
+  title: string;
+  description: string;
+  more: string[];
+  source: string;
+}
+
 export interface IStack {
   title: string;
   icon: React.FC;

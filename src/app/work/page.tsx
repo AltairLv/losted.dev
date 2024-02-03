@@ -1,7 +1,8 @@
 import { workSum } from "@/data/info";
-import { allWork } from "@/data/work";
+import { allProject, allWork } from "@/data/work";
 import WorkItemCard from "@/components/Card/WorkItemCard";
-import { IWork } from "@/types/types";
+import { IProject, IWork } from "@/types/types";
+import ProjectItemCard from "@/components/Card/ProjectItemCard";
 
 export const metadata = {
   title: "Work",
@@ -19,6 +20,18 @@ export default function WorkPage() {
             link={project.id}
             title={project.title}
             thumbnail={project.previewImg}
+          />
+        ))}
+      </div>
+      <h2 className="text-base mt-5">· More Projects</h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:justify-items-center my-6">
+        {allProject.map((project: IProject, index) => (
+          <ProjectItemCard
+            key={index}
+            title={project.title}
+            description={project.description}
+            more={project.more}
+            source={project.source}
           />
         ))}
       </div>

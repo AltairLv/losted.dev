@@ -59,9 +59,7 @@ export const Navbar = () => {
               }}
               className="flex flex-row items-center"
             >
-              <span className="font-sans mx-1 p-0.5 hover:text-neutral-700 dark:hover:text-neutral-200 ">
-                {page}
-              </span>
+              <span className="font-sans mx-1 p-0.5 select-none">{page}</span>
               <span className="mx-2 md:mx-4 cursor-default">/</span>
             </motion.div>
           )}

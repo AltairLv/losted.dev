@@ -1,7 +1,6 @@
 import Image from "next/image";
 import clsx from "clsx";
 import { ISpotifyPlay } from "@/types/types";
-import Link from "next/link";
 
 const SpotifyServerCard = ({ spotify }: { spotify: ISpotifyPlay }) => {
   return (
@@ -37,7 +36,7 @@ const SpotifyServerCard = ({ spotify }: { spotify: ISpotifyPlay }) => {
 
         <p className="text-xs truncate">by {spotify.artist}</p>
       </div>
-      <Link href={"/spotify"} prefetch={false} className="relative">
+      <div className="relative">
         <span className="absolute -top-9 left-0.5 flex h-2.5 w-2.5">
           <span
             className={clsx(
@@ -52,7 +51,7 @@ const SpotifyServerCard = ({ spotify }: { spotify: ISpotifyPlay }) => {
             )}
           ></span>
         </span>
-      </Link>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { IWork } from "@/types/types";
+import { IProject, IWork } from "@/types/types";
 
 export const devopslabData = {
   id: "devopslab",
@@ -35,4 +35,19 @@ export const markdownData = {
   ],
 };
 
+export const projectSpotifyApi = {
+  title: "Spotify API",
+  description: "Get currently playing or recently played song.",
+  more: ["NestJS", "Redis", "TypeScript"],
+  source: "https://github.com/AltairLv/spotify-api",
+};
+
+export const projectPokenext = {
+  title: "PokéNext",
+  description: "Search a Pokémon via input that stores data in the URL.",
+  more: ["Next.js", "TypeScript"],
+  source: "https://github.com/AltairLv/pokenext-ssr",
+};
+
 export const allWork: IWork[] = [devopslabData, markdownData, linkinbioData];
+export const allProject: IProject[] = [projectSpotifyApi, projectPokenext];

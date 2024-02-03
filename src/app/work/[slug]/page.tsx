@@ -59,7 +59,7 @@ export default function Work({ params }: { params: { slug: string } }) {
             <h1 className="font-sans text-2xl underline underline-offset-4">
               {project.title}
             </h1>
-            {project.visitUrl && (
+            {project.visitUrl ? (
               <a
                 href={project.visitUrl}
                 rel="noopener noreferrer"
@@ -68,6 +68,10 @@ export default function Work({ params }: { params: { slug: string } }) {
               >
                 VISIT <ArrowUpRightIcon />
               </a>
+            ) : (
+              <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs">
+                not-available
+              </div>
             )}
           </div>
           <p className="mb-2 text-base font-sans">{project.description}</p>
