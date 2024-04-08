@@ -12,7 +12,7 @@ export default function StackPage() {
   return (
     <>
       <p className="mb-4 mt-5 text-center">{stackSum()}</p>
-      <div className="flex flex-col w-full items-center mb-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center">
         {allStack.map((stack: IStack) => (
           <StackCard
             key={stack.title}

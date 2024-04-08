@@ -25,6 +25,7 @@ const nextjs = {
 const nestjs = {
   title: "NestJS",
   icon: NestIcon,
+  favorite: true,
   description: "A progressive server-side framework.",
 };
 
@@ -32,7 +33,7 @@ const tailwind = {
   title: "Tailwind",
   icon: TailwindIcon,
   favorite: true,
-  description: "A CSS framework.",
+  description: "A CSS framework to build custom designs quickly.",
 };
 
 const typescript = {
