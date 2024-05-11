@@ -17,7 +17,7 @@ export function SignOut() {
 export function SignIn({ service }: { service: "Google" | "Github" }) {
   return (
     <button
-      className="flex bg-white dark:bg-black text-neutral-800 dark:text-neutral-200 px-4 py-3 rounded-md font-semibold text-sm mb-4 hover:text-white transition-all border border-slate-300"
+      className="flex bg-white dark:bg-black text-neutral-600 dark:text-neutral-200 px-4 py-3 rounded-md font-semibold text-sm mb-4 hover:text-neutral-800 hover:dark:text-white transition-all border border-slate-300"
       onClick={async () => await signIn(service.toLowerCase())}
     >
       {service === "Google" ? <GoogleIcon /> : <GitHubIcon />}

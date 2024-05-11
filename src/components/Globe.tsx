@@ -1,7 +1,7 @@
 //@ts-nocheck
 "use client";
 import createGlobe from "cobe";
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { useSpring } from "react-spring";
 
 export const Globe = () => {
@@ -9,15 +9,21 @@ export const Globe = () => {
   const pointerInteracting = useRef(null);
   const pointerInteractionMovement = useRef(0);
 
-  const [{ r }, api] = useSpring(() => ({
-    r: 0,
-    config: {
-      mass: 1,
-      tension: 280,
-      friction: 40,
-      precision: 0.001,
-    },
-  }));
+  const [{ r }, api] = useSpring(
+    useMemo(
+      () => ({
+        r: 0,
+        config: {
+          mass: 1,
+          tension: 280,
+          friction: 40,
+          precision: 0.001,
+        },
+      }),
+      []
+    ),
+    []
+  );
 
   useEffect(() => {
     let width = 0;
@@ -57,7 +63,7 @@ export const Globe = () => {
     });
     setTimeout(() => (canvasRef.current.style.opacity = "1"));
     return () => globe.destroy();
-  }, []);
+  }, [r]);
 
   return (
     <div

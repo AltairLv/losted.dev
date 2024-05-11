@@ -27,6 +27,7 @@ export const Messages = async () => {
 
   return (
     <>
+      {guests.length === 0 && <h1>No messages yet 🌱</h1>}
       {guests.map((message: IMessage, index) => (
         <MessageCard
           key={index}
