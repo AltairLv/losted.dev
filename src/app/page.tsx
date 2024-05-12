@@ -6,7 +6,7 @@ import SpotifySkeletonCard from "@/components/Card/Spotify/SpotifySkeletonCard";
 import Link from "next/link";
 import { Globe } from "@/components/Globe";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export default function Home() {
   return (
