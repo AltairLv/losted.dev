@@ -5,7 +5,7 @@ import { ISpotifyPlay } from "@/types/types";
 const SpotifyServerCard = ({ spotify }: { spotify: ISpotifyPlay }) => {
   const { isPlaying } = spotify;
   return (
-    <div className="relative font-sans flex flex-row min-w-[250px] py-1 border-[1px] dark:border-BorderLight border-BorderDark justify-between items-center space-x-3 px-2 z-10">
+    <div className="relative font-sans flex flex-row gap-2 min-w-[250px] py-1 border-[1px] dark:border-BorderLight border-BorderDark items-center space-x-3 px-2 z-10">
       <div
         className={clsx(
           isPlaying
@@ -81,7 +81,6 @@ const SpotifyServerCard = ({ spotify }: { spotify: ISpotifyPlay }) => {
           {spotify.title}
         </a>
         <p className="text-xs truncate">{spotify.album}</p>
-
         <p className="text-xs truncate">by {spotify.artist}</p>
       </div>
     </div>
