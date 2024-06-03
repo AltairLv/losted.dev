@@ -16,7 +16,7 @@ const SpotifyArtist = ({
       href={url}
       target="_blank"
       rel="noopener"
-      className="group relative flex flex-col items-center justify-center w-36 h-40 border border-black/10 dark:border-white/10 rounded"
+      className="group relative flex flex-col items-center justify-center w-36 h-40 border border-black/10 dark:border-white/10"
     >
       <div className="absolute top-1 left-1.5 text-xs dark:text-white/20 text-black/30">
         {index + 1}.
@@ -32,6 +32,10 @@ const SpotifyArtist = ({
         />
       </div>
       <span className="text-base md:text-sm">{name}</span>
+      <div className="border-zinc-400 dark:border-zinc-700 group-hover:border-zinc-500 dark:group-hover:border-zinc-500 transition-all duration-100 ease-in h-2 w-2 border-l border-t absolute left-[-1px] top-[-1px] rotate-0" />
+      <div className="border-zinc-400 dark:border-zinc-700 group-hover:border-zinc-500 dark:group-hover:border-zinc-500 transition-all duration-100 ease-in h-2 w-2 border-l border-t absolute right-[-1px] top-[-1px] rotate-90" />
+      <div className="border-zinc-400 dark:border-zinc-700 group-hover:border-zinc-500 dark:group-hover:border-zinc-500 transition-all duration-100 ease-in h-2 w-2 border-l border-t absolute bottom-[-1px] left-[-1px] -rotate-90" />
+      <div className="border-zinc-400 dark:border-zinc-700 group-hover:border-zinc-500 dark:group-hover:border-zinc-500 transition-all duration-100 ease-in h-2 w-2 border-l border-t absolute bottom-[-1px] right-[-1px] rotate-180" />
     </a>
   );
 };

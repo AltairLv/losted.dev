@@ -7,7 +7,7 @@ const ProjectItemCard = ({ title, description, more, source }: IProject) => {
       href={source}
       target="_blank"
       rel="noopener noreferrer"
-      className="relative group inline-flex flex-col space-y-1 mx-4 mt-2 mb-4 rounded-md border-BorderDark dark:border-BorderLight hover:border-neutral-800 hover:dark:border-neutral-400 border px-2.5 py-4 text-sm transition-all duration-300 ease-in-out"
+      className="relative group inline-flex flex-col space-y-1 mx-4 mt-2 mb-4 rounded border-BorderDark dark:border-BorderLight hover:border-neutral-800 hover:dark:border-neutral-400 border px-2.5 py-4 text-sm transition-all duration-300 ease-in-out"
     >
       <h2 className="relative w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-black dark:after:bg-white after:w-full after:scale-x-0 group-hover:after:scale-x-100 after:transition after:duration-300 ease-in-out after:origin-left">
         {title}

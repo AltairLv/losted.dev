@@ -10,11 +10,11 @@ const WorkItemCard = ({ link, title, thumbnail }: IWorkItem) => {
       {link ? (
         <Link href={`/work/${link}`} scroll={true} className="group mx-4">
           {title && <h2 className="font-thin font-sans mb-4">{title} :</h2>}
-          <div className="overflow-hidden rounded-lg">
+          <div className="overflow-hidden rounded">
             <Image
               src={previewImg}
               alt="Preview"
-              className="object-cover rounded-md select-none hover:scale-[1.03] ease-in-out duration-200"
+              className="object-cover rounded select-none hover:scale-[1.03] ease-in-out duration-200"
               width={640}
               height={360}
               priority

@@ -40,6 +40,10 @@ const SpotifyTrack = ({
           <span className="ml-1 line-clamp-1">{artists}</span>
         </div>
       </div>
+      <div className="border-zinc-400 dark:border-zinc-700 group-hover:border-zinc-500 dark:group-hover:border-zinc-500 transition-all duration-100 ease-in h-2.5 w-2.5 border-l border-t absolute left-[-1px] top-[-1px] rotate-0" />
+      <div className="border-zinc-400 dark:border-zinc-700 group-hover:border-zinc-500 dark:group-hover:border-zinc-500 transition-all duration-100 ease-in h-2.5 w-2.5 border-l border-t absolute right-[-1px] top-[-1px] rotate-90" />
+      <div className="border-zinc-400 dark:border-zinc-700 group-hover:border-zinc-500 dark:group-hover:border-zinc-500 transition-all duration-100 ease-in h-2.5 w-2.5 border-l border-t absolute bottom-[-1px] left-[-1px] -rotate-90" />
+      <div className="border-zinc-400 dark:border-zinc-700 group-hover:border-zinc-500 dark:group-hover:border-zinc-500 transition-all duration-100 ease-in h-2.5 w-2.5 border-l border-t absolute bottom-[-1px] right-[-1px] rotate-180" />
     </a>
   );
 };
